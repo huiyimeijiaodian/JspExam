@@ -2,6 +2,7 @@ com\hand\entity\Category.class
 com\hand\entity\Payment.class
 com\hand\entity\Country.class
 com\hand\entity\City.class
+com\hand\dao\FilmDaoImp.class
 com\hand\entity\FilmActor.class
 com\hand\entity\Film_category.class
 com\hand\dao\ConnectionFactory.class
@@ -12,9 +13,11 @@ com\hand\entity\Address.class
 com\hand\entity\Inventory.class
 com\hand\entity\Staff.class
 com\hand\servlet\LoginServlet.class
+com\hand\servlet\DeleteServlet.class
 com\hand\entity\Language.class
 com\hand\servlet\AddServlet.class
 com\hand\entity\Rental.class
 com\hand\entity\Actor.class
 com\hand\servlet\ShowServlet.class
+com\hand\dao\FilmDao.class
 com\hand\entity\Film_text.class

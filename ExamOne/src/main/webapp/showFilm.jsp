@@ -92,7 +92,7 @@ h2 {
 					%>
 				</td>
 				<td>
-					<a href="#">删除</a>
+					<a href="DeleteServlet?film_id=<%=rs.getInt(1) %>">删除</a>
 				</td>
 			</tr>
 			<%

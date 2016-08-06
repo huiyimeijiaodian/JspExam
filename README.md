@@ -1,5 +1,13 @@
-数据库连接函数在com.hand.ConnectionFactory中：如下我的数据库设置密码为123456。
- conn=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/sakila","root","123456");
+数据库连接函数在com.hand.ConnectionFactory中：
+数据库配置文件dbconfig.propertities(路径：src/main/resources)如下：
+driver=com.mysql.jdbc.Driver
+dburl=jdbc\:mysql\://localhost\:3306/sakila
+user=root
+password=123456
+
+我的数据库账号：root  ,密码：123456
+老师根据自己本地账号修改配置文件
+
 
  在项目中打开控制台：
  编译运行启动服务器：
@@ -10,8 +18,15 @@
 在浏览器中输入：
 http://127.0.0.1:8080/index.jsp  （进入index主页面）
 
-点击登陆:进入登陆页面
+1、点击登陆:进入登陆页面
+	(1)为空提示输入不跳转
+	(2)不为空到数据库查询是否存在账号
+		(2.1) 存在跳转至登陆成功页面
+		(2.2) 不存在跳转到失败页面
 
-点击显示film页面：进入显示页面，显示所有电影信息
+2、点击显示film页面：进入显示页面，显示所有电影信息
 
-点击添加film页面：进入添加电影页面
+3、点击添加film页面：进入添加电影页面
+	  
+
+

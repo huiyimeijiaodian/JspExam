@@ -39,7 +39,7 @@ public class LoginServlet extends HttpServlet {
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("-----dopost--------");
+		System.out.println("-----loginServlet dopost--------");
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		//取得参数username的值
