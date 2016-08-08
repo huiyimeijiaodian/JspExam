@@ -44,11 +44,10 @@ public class LoginServlet extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		//取得参数username的值
 		String uname = request.getParameter("uname");
-//		String upsd = request.getParameter("upwd");
-		System.out.println("name:"+uname);
+		String return_uri = request.getParameter("return_uri");
+		System.out.println("name:"+uname+",return_uri"+return_uri);
 		
 		RequestDispatcher rd = null;
-		String forward = null;
 		boolean flag=false;
 		if (uname == null) {
 			request.setAttribute("msg", "用户名为空");
@@ -69,13 +68,24 @@ public class LoginServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			if (flag) {
-				forward = "/success.jsp";
+				System.out.println("success");
+				request.getSession().setAttribute("sign", "login_success");
+				if(return_uri!=null){
+					rd = request.getRequestDispatcher(return_uri);
+					rd.forward(request, response);
+				}else{
+					rd = request.getRequestDispatcher("/index.jsp");
+					rd.forward(request, response);
+				}
+				System.out.println("login success!");
+				
 			} else {
-				forward = "/error.jsp";
+				request.getSession().setAttribute("sign", "login_error");
+				rd = request.getRequestDispatcher("/error.jsp");
+				rd.forward(request, response);
 			}
 
-			rd = request.getRequestDispatcher(forward);
-			rd.forward(request, response);
+			
 			
 		}
 		

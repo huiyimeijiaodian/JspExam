@@ -26,6 +26,9 @@
 	 	ul li a{
 	 		text-decoration: none;
 	 	}
+	 	ul li a:hover{
+	 		text-decoration:underline;
+	 	}
 	</style>
 </head>
 <body>
@@ -33,7 +36,24 @@
 	<div class="content">
 		<h2>电影租赁系统</h2>
 		<ul>
-			<li><a href="login.jsp">点击登陆</a></li>
+			<li>
+				<%
+					String sign="";
+					Object obj=session.getAttribute("sign");
+					if(obj!=null){
+						sign=obj.toString();
+					}
+					if(sign.equals("login_success")){
+				%>	
+					您已登陆！ <a href="<%=request.getContextPath()%>/LogoutServlet">退出</a>
+				<%	
+					}else{
+				%>
+					<a href="login.jsp">点击登陆</a>
+				<%	
+					}
+				%>
+			</li>
 			<li><a href="showFilm.jsp">显示film页面</a></li>
 			<li><a href="addFilm.jsp">添加film页面</a></li>
 			<li><a href="#">freemarker页面</a></li>

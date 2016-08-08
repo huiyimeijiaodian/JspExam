@@ -19,5 +19,6 @@
 			out.println("无");
 		}
    %>
+   <a href="/index.jsp">返回首页 </a>
   </body>
 </html>

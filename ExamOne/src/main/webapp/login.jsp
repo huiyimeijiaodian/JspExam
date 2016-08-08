@@ -38,8 +38,10 @@ body {
 </head>
 
 <body>
-	<form action="<%= request.getContextPath() %>/LoginServlet" method="get" name="LoginForm">
-
+	<form action="<%= request.getContextPath() %>/LoginServlet" method="post" name="LoginForm">
+		<% if(request.getAttribute("return_uri")!=null){ %>
+			<input type="hidden" name="return_uri" value="<%=request.getAttribute("return_uri")%>" /> 
+		<%} %>
 		<table border="1" cellspacing="0" cellpadding="5" bordercolor="silver" align="center">
 			<tr>
 				<td colspan="2" align="center" bgcolor="#E8E8E8">用户登陆</td>
@@ -55,7 +57,7 @@ body {
 				</td>
 			</tr>
 		</table>
-
+		
 	</form>
 </body>
 </html>
